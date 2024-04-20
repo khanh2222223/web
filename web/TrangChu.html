@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>An toàn thực phẩm</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #6a0dad; /* Màu tím nhạt */
+            color: white; /* Màu chữ trắng */
+            padding-top: 50px; /* Thêm padding-top để tránh menu bị che phủ */
+            font-family: Arial, sans-serif; /* Font chữ phù hợp */
+        }
+
+        .product {
+            position: relative;
+            margin-bottom: 20px;
+            cursor: pointer;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Thêm hiệu ứng shadow */
+        }
+
+        .product img {
+            width: 100%;
+            height: 250px; /* Đặt chiều cao cố định cho hình ảnh */
+            object-fit: cover; /* Hiển thị hình ảnh mà không bị biến đổi tỷ lệ */
+            transition: transform 0.3s ease;
+        }
+
+        .product:hover img {
+            transform: scale(1.1); /* Hiệu ứng phóng to khi rê chuột vào */
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .product:hover .overlay {
+            opacity: 1;
+        }
+
+        .overlay-content {
+            text-align: center;
+        }
+
+        .navbar {
+            background-color: white; /* Nền trắng cho menu */
+        }
+
+        .navbar-brand {
+            color: #6a0dad !important; /* Đổi màu chữ cho tên thương hiệu */
+            font-weight: bold; /* Đậm chữ cho tên thương hiệu */
+        }
+
+        .navbar-nav .nav-link {
+            color: #6a0dad !important; /* Đổi màu chữ cho các liên kết */
+            font-weight: bold; /* Đậm chữ cho các liên kết */
+        }
+
+        .navbar-toggler {
+            margin-left: auto;
+        }
+
+        /* Phần mở đầu */
+        .intro {
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .intro h2 {
+            margin-bottom: 20px;
+            font-size: 32px;
+            font-weight: bold;
+        }
+
+        .intro p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hamburger Menu Button -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">An toàn và sức khỏe</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="TrangChu.html">Trang chủ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="thong-tin-thuc-pham.html">Thông tin thực phẩm</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="cach-bao-quan-thuc-pham.html">Cách bảo quản thực phẩm</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="cach-lua-chon.html">Cách lựa chọn</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="thong-tin-khac.html">Thông tin khác</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Introduction -->
+    <div class="intro">
+        <h2>An toàn thực phẩm là gì?</h2>
+        <p>An toàn thực phẩm là một khía cạnh quan trọng của cuộc sống hàng ngày. Đảm bảo an toàn thực phẩm đồng nghĩa với việc đảm bảo rằng thực phẩm mà chúng ta tiêu thụ không gây hại cho sức khỏe. Nó liên quan đến việc chế biến, bảo quản và vận chuyển thực phẩm một cách an toàn và hygienic. Quy trình này đòi hỏi sự tuân thủ nghiêm ngặt các quy định và tiêu chuẩn về vệ sinh thực phẩm để đảm bảo rằng thực phẩm không bị nhiễm khuẩn, độc hại hoặc bị ô nhiễm bởi các chất cấm hay các yếu tố nguy hiểm khác.</p>
+        <h2>Ý nghĩa của đảm bảo an toàn thực phẩm</h2>
+        <p>Đảm bảo an toàn thực phẩm đóng vai trò quan trọng trong việc bảo vệ sức khỏe của con người. Nó không chỉ giúp ngăn chặn sự lây lan của các bệnh tật liên quan đến thực phẩm mà còn đảm bảo rằng mọi người có thể tiêu thụ thực phẩm một cách tự tin và an tâm. Ngoài ra, việc duy trì sự an toàn trong chuỗi cung ứng thực phẩm cũng góp phần vào việc đảm bảo sự ổn định kinh tế và xã hội.</p>
+    </div>
+
+    <!-- Content Area -->
+    <div class="container mt-3">
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+          <!-- Product 1: Carrot -->
+          <div class="col">
+              <div class="product">
+                  <img src="IMG/Carot.jpg" alt="Carrot" class="img-fluid">
+                  <div class="overlay">
+                      <div class="overlay-content">
+                          <h4>Cà Rốt Tươi</h4>
+                          <p >Giàu beta-carotene, tốt cho thị lực và hệ miễn dịch.</p>
+                          <p>Ngắm cho zui thoai</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <!-- Product 2: White Radish -->
+          <div class="col">
+              <div class="product">
+                  <img src="IMG/CuCai.jpg" alt="White Radish" class="img-fluid">
+                  <div class="overlay">
+                      <div class="overlay-content">
+                          <h4>Củ Cải Trắng</h4>
+                          <p>Chứa nhiều chất xơ, giúp tiêu hóa tốt hơn.</p>
+                          <p>Ngắm cho zui thoai</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <!-- Product 3: Guava -->
+          <div class="col">
+              <div class="product">
+                  <img src="IMG/Oi.jpg" alt="Guava" class="img-fluid">
+                  <div class="overlay">
+                      <div class="overlay-content">
+                          <h4>Ổi Tươi</h4>
+                          <p>Nguồn cung cấp vitamin C dồi dào, tăng cường sức đề kháng.</p>
+                          <p>Ngắm cho zui thoai</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <!-- Các sản phẩm khác -->
+          <!-- Product 4: Mint -->
+          <div class="col">
+              <div class="product">
+                  <img src="IMG/RauThom.jpg" alt="Mint" class="img-fluid">
+                  <div class="overlay">
+                      <div class="overlay-content">
+                          <h4>Rau Thơm</h4>
+                          <p>Tuyệt vời cho việc thêm hương vị vào món ăn, có đặc tính chống viêm.</p>
+                          <p>Ngắm cho zui thoai</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <!-- Product 5: Apple -->
+          <div class="col">
+              <div class="product">
+                  <img src="IMG/Tao.jpg" alt="Apple" class="img-fluid">
+                  <div class="overlay">
+                      <div class="overlay-content">
+                          <h4>Táo Đỏ Fuji</h4>
+                          <p>Ngọt và giòn, giàu chất chống oxy hóa.</p>
+                          <p>Ngắm cho zui thoai</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <!-- Product 6: Beef -->
+          <div class="col">
+              <div class="product">
+                  <img src="IMG/ThitBo.jpg" alt="Beef" class="img-fluid">
+                  <div class="overlay">
+                      <div class="overlay-content">
+                          <h4>Thịt Bò Angus</h4>
+                          <p>Thịt bò chất lượng cao, giàu protein và sắt.</p>
+                          <p>Ngắm cho zui thoai</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <!-- Product 7: Pork -->
+          <div class="col">
+              <div class="product">
+                  <img src="IMG/ThitHeo.jpg" alt="Pork" class="img-fluid">
+                  <div class="overlay">
+                      <div class="overlay-content">
+                          <h4>Thịt Heo Nạc</h4>
+                          <p>Thịt mềm, thích hợp cho mọi cách chế biến.</p>
+                          <p>Ngắm cho zui thoai</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <!-- Product 8: Chicken Egg -->
+          <div class="col">
+              <div class="product">
+                  <img src="IMG/TrungGa.jpg" alt="Chicken Egg" class="img-fluid">
+                  <div class="overlay">
+                      <div class="overlay-content">
+                          <h4>Trứng Gà Tự Nhiên</h4>
+                          <p>Trứng giàu protein, vitamin D, và choline.</p>
+                          <p>Ngắm cho zui thoai</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <!-- Product 9: Duck Egg -->
+          <div class="col">
+              <div class="product">
+                  <img src="IMG/TrungVit.jpg" alt="Duck Egg" class="img-fluid">
+                  <div class="overlay">
+                      <div class="overlay-content">
+                          <h4>Trứng Vịt Cao Cấp</h4>
+                          <p>Nhiều Omega-3, thích hợp cho món luộc và bắc thảo.</p>
+                          <p>Ngắm cho zui thoai</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <!-- Product 10: Lettuce -->
+          <div class="col">
+              <div class="product">
+                  <img src="IMG/XaLach.jpg" alt="Lettuce" class="img-fluid">
+                  <div class="overlay">
+                      <div class="overlay-content">
+                          <h4>Xà Lách Lollo Bionda</h4>
+                          <p>Xanh mát, giàu vitamin K và A.</p>
+                          <p>Ngắm cho zui thoai</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <!-- Product 11: Shrimp -->
+          <div class="col">
+              <div class="product">
+                  <img src="IMG/Tom.jpg" alt="Shrimp" class="img-fluid">
+                  <div class="overlay">
+                      <div class="overlay-content">
+                          <h4>Tôm</h4>
+                          <p>Ngon</p>
+                          <p>Ngắm cho zui thoai</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <!-- Product 12: Tuna -->
+          <div class="col">
+              <div class="product">
+                  <img src="IMG/CaNgu.jpg" alt="Tuna" class="img-fluid">
+                  <div class="overlay">
+                      <div class="overlay-content">
+                          <h4>Cá ngừ đại dương</h4>
+                          <p>Cũng ngon</p>
+                          <p>Ngắm cho zui thoai</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <!-- Product 12: Tuna -->
+          <div class="col">
+            <div class="product">
+              <!--chỉnh link ảnh-->
+                <img src="IMG/CaNgu.jpg" alt="Tuna" class="img-fluid">
+                <div class="overlay">
+                    <div class="overlay-content">
+                        <h4>Cá ngừ đại dương</h4>
+                        <p>Cũng ngon</p>
+                        <p>Ngắm cho zui thoai</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+  </div>
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
